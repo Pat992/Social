@@ -1,0 +1,63 @@
+/*******************
+** All about colors
+*******************/
+
+/*
+* Body
+* Text
+* Main 
+*/
+
+body{
+    background-color: #eeeeee;
+}
+
+.mainColor {
+    background-color: #3a4750;
+}
+
+.secondaryColor {
+    background-color: #d72323;
+}
+
+.navColor {
+    background-color: #5D5D5D;
+}
+
+.textColor {
+    color: #eeeeee;
+}
+
+h1, h2{
+    color: #eeeeee;
+}
+
+/*
+* Buttons
+*/
+
+.btn {
+    flex-direction: row;
+    height: 40px;
+    width: 100px;
+    border: none;
+    border-radius: 2px;
+    color: #eeeeee;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn:hover {
+    background-color: #5D5D5D;
+    color: #eeeeee;
+}
+
+.camera-btn:hover, .nav-btn:hover {
+    background-color: #f04545;
+}
+
+.main-border {
+    background-color: transparent;
+    color: #3a4750;
+    border: 2px solid #3a4750;
+}
