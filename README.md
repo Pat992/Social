@@ -9,13 +9,18 @@ A small Facebook-like app.
 ##### 1.
 ```
 In your Database run import with following file:
-options/social.sql
+social-api/options/social.sql
 ```
 
 ##### 2.
 ```
 Change the connection string in following file:
-controller/databaseConnect.php Line 28
+social-api/controller/databaseConnect.php Line 28
+```
+
+##### 3.
+```
+Run mpn install in social-spa
 ```
 
 #### That's it, the aplication should run on your machine now.

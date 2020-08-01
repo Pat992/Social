@@ -15,20 +15,23 @@ class User extends MainController
             $stmt = $this->pdo->prepare("SELECT * FROM user WHERE userName=:username");
             $stmt->execute(['username' => $name]);
             $user = $stmt->fetch();
-
+            
+            if(!$user) {
+                http_response_code(401);
+                echo json_encode("User not Existing");
+                die();    
+            }
             if(password_verify($password, $user['userPassword'])) {
                 $this->createSession($name);
             }
             else if($user){
-                echo "<h2>Wrong Password</h2>";
+                http_response_code(401);
+                echo json_encode("Wrong credentials");
                 die();
             }
-            else {
-                echo "<h2>User not Existing</h2>";
-                die();                
-            }
          } catch (Exception $e) {
-            echo "<h2>User not Existing</h2>";
+            http_response_code(401);
+            echo json_encode("User not Existing");
             die();
         }
     }
@@ -50,18 +53,20 @@ class User extends MainController
                     'password' => $password
                 ]);
             } catch (Exception $e) {
-                echo "<h2>Error creating user, please try again later.</h2>";
+                http_response_code(500);
+                echo json_encode("Error creating user, please try again later.");
                 die();
             }
             $this->createSession($name);
         } else {
-            echo "<h1>Error</h1><h2>User already existing</h2>.";
+            http_response_code(401);
+            echo json_encode("User already existing");
             die();
         }
     }
 
     public function logoutUser() {
-        $this->deleteDir();
+        //$this->deleteDir();
         session_destroy();
 
         header("Location: {$_SERVER['PHP_SELF']}");
@@ -83,9 +88,9 @@ class User extends MainController
         $_SESSION['userID'] = $id;
         session_regenerate_id(true);
         
-        $this->createDir();
+        //$this->createDir();
     }
-
+/*
     private function createDir() {
         $this->deleteDir();
         mkdir("tmpImg/{$_SESSION['userID']}");
@@ -97,4 +102,5 @@ class User extends MainController
             rmdir("tmpImg/{$_SESSION['userID']}");
         }
     }
+    */
 }
