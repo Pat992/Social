@@ -1,10 +1,16 @@
-import React from 'react'
+import React from 'react';
+
+import Navbar from '../UI/Navbar/Navbar';
+import Posts from '../Posts/Posts';
+import CreatePost from '../Posts/CreatePost/CreatePost';
 
 const Main = () => {
     return (
-        <div>
-            <h1>Main page</h1>
-        </div>
+        <React.Fragment>
+            <Navbar />
+            <CreatePost />
+            <Posts />
+        </React.Fragment>
     )
 }
 

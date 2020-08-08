@@ -4,6 +4,7 @@ session_start();
 
 require_once __DIR__ . "/router.php";
 
+// use namespaces
 use Core\DatabaseConnect;
 use Core\Post;
 use Core\User;
@@ -12,6 +13,7 @@ use Builder\PostBuilder;
 use Builder\LoginBuilder;
 use Core\Images;
 
+// Make classes if not existing
 if (!isset($dba)) {
     $dba = new DatabaseConnect();
     $pdo = $dba->getPdo();
@@ -41,19 +43,12 @@ if (isset($_GET['nav'])) {
     }
 }
 
-if (isset($_POST['comment'])) {
-    $comment->newComment();
-}
-
-
-if(isset($_POST['deleteComment'])) {
-    $comment->deleteComment();
-}
-
 // if user is logged-in, get all posts, comments and images
 if (isset($_SESSION['userName'])) {
     $postBuilder = new PostBuilder($post->getAll('post'), $comment->getAll('comment'), $comment->getAll('image'));
 } else {
+    // Uncomment to test, add an existing user.
+    $this->createSession('Patrick');
     // get data
     $data = json_decode(file_get_contents('php://input'), true);
     //if no data, then return unauthorized

@@ -1,5 +1,5 @@
 <?php 
-
+// Get controller
 require_once __DIR__ . "/controller/databaseConnect.php";
 require_once __DIR__ . "/controller/userController.php";
 require_once __DIR__ . "/controller/postsController.php";

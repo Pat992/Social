@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 import Input from '../UI/Input/Input';
-import Button from '../UI/Button/Button'
+import Button from '../UI/Button/Button';
+import Card from '../UI/Card/Card';
 
 const Login = (props) => {
     const [userName, setUserName] = useState('');
@@ -35,22 +36,22 @@ const Login = (props) => {
         }
     }
     return (
-        <section className="login main-form">
-            <div className="mainColor">
-                <div className="post-title">
-                    <h1 id="login-title">Login</h1>
-                </div>
-            </div>
-            <form onSubmit={onSubmitHandler} >
-                <Input type="text" value={userName} setValue={setUserName}>Name:</Input>
-                <Input type="email" value={email} setValue={setEmail}>Email:</Input>
-                <Input type="email" value={repeatEmail} setValue={setRepeatEmail}>Repeat Email:</Input>
-                <Input type="password" value={password} setValue={setPassword}>Password:</Input>
-                <Input type="password" value={repeatPassword} setValue={setRepeatPassword}>Repeat Password:</Input>
-                <Button type="submit">Submit</Button>
-                <Button type="button" onClick={() => setIsLogin(() => !isLogin)}>{isLogin ? 'Register' : 'Login'}</Button>
-            </form>
-        </section >
+        <Card
+            cardHeader={
+                <h1 id="login-title">Login</h1>
+            }
+            cardBody={
+                <form onSubmit={onSubmitHandler} >
+                    <Input type="text" value={userName} setValue={setUserName}>Name:</Input>
+                    <Input type="email" value={email} setValue={setEmail}>Email:</Input>
+                    <Input type="email" value={repeatEmail} setValue={setRepeatEmail}>Repeat Email:</Input>
+                    <Input type="password" value={password} setValue={setPassword}>Password:</Input>
+                    <Input type="password" value={repeatPassword} setValue={setRepeatPassword}>Repeat Password:</Input>
+                    <Button type="submit">Submit</Button>
+                    <Button type="button" onClick={() => setIsLogin(() => !isLogin)}>{isLogin ? 'Register' : 'Login'}</Button>
+                </form>
+            }
+        />
     )
 }
 

@@ -19,7 +19,7 @@ class User extends MainController
             if(!$user) {
                 http_response_code(401);
                 echo json_encode("User not Existing");
-                die();    
+                die();
             }
             if(password_verify($password, $user['userPassword'])) {
                 $this->createSession($name);
