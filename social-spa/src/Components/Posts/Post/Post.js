@@ -3,6 +3,7 @@ import React from 'react'
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
 import Input from '../../UI/Input/Input';
+import Comment from '../../Comment/Comment';
 import classes from './Post.module.css';
 
 const Post = (props) => {
@@ -23,7 +24,7 @@ const Post = (props) => {
                     <hr />
                     <Input placeholder="New Comment" />
                     <Button styling="main">COMMENT</Button>
-                    <p>Here come the comments</p>
+                    <Comment />
                 </div>
             }
         />
