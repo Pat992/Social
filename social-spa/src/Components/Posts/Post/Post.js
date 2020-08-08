@@ -1,12 +1,31 @@
 import React from 'react'
 
 import Card from '../../UI/Card/Card';
+import Button from '../../UI/Button/Button';
+import Input from '../../UI/Input/Input';
+import classes from './Post.module.css';
 
-const Post = () => {
+const Post = (props) => {
     return (
         <Card
-            cardHeader={<h1>I'm a post</h1>}
-            cardBody={<p>I'm the post content</p>}
+            cardHeader={
+                <React.Fragment>
+                    <p>Image</p>
+                    <div className={classes.Row}>
+                        <h2>I'm a post</h2>
+                        <p>Date written</p>
+                    </div>
+                </React.Fragment>
+            }
+            cardBody={
+                <div className={classes.CommentSection}>
+                    <p>I'm the post content</p>
+                    <hr />
+                    <Input placeholder="New Comment" />
+                    <Button styling="main">COMMENT</Button>
+                    <p>Here come the comments</p>
+                </div>
+            }
         />
     )
 }

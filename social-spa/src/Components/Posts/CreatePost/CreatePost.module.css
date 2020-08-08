@@ -1,0 +1,25 @@
+.Column {
+    display: flex;
+    align-self: flex-start;
+    width: 100%;
+    padding: 20px;
+}
+
+.Column textarea {
+    margin: 10px;
+    width: 80%;
+    height: 150px;
+    border: none;
+    resize: none;
+}
+
+.CameraButton {
+    height: 40px;
+    width: 40px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 4px;
+    background-image: url(../../../graphic/camera.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+}

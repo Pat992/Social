@@ -4,14 +4,16 @@ import classes from './Input.module.css';
 
 const Input = (props) => {
     return (
-        <label className={props.hidden ? classes.Hidden : null}>
-            {props.children}
+        <React.Fragment>
+            <label className={props.hidden ? classes.Hidden : null}>{props.children}</label>
             <input
                 className={classes.Input}
+                placeholder={props.placeholder}
                 type={props.type}
                 value={props.value}
-                onChange={(e) => props.setValue(e.target.value)} />
-        </label>
+                onChange={(e) => props.setValue(e.target.value)}
+            />
+        </React.Fragment>
     )
 }
 

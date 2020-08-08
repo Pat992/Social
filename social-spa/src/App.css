@@ -3,11 +3,4 @@
   flex-direction: column;
   align-items: center;
   color: #303841;
-  margin-top: 50px;
-}
-
-@media only screen and (max-width:450px) {
-  .App {
-      margin-top: 0;
-  }
 }

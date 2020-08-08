@@ -2,8 +2,9 @@
     background-color: #3a4750;
 }
 
-.MainColor:hover {
+.MainColorHover {
     background-color: #485863;
+    cursor: pointer;
 }
 
 .mainColorText {
@@ -16,6 +17,7 @@
 
 .SecondaryColor:hover {
     background-color: #f04545;
+    cursor: pointer;
 }
 
 .SecondaryColorText {
@@ -28,6 +30,7 @@
 
 .secondaryColorSvgHover {
     fill: #f04545;
+    cursor: pointer;
 }
 
 .HighlightColor {

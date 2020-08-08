@@ -13,3 +13,7 @@ body {
   src: url('fonts/Montserrat-Regular.ttf') format('embedded-opentype');
   src: url('fonts/Montserrat-Regular.ttf') format('truetype');
 }
+
+hr {
+  width: 90%;
+}
