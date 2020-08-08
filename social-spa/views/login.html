@@ -6,52 +6,70 @@
     </div>
     <form action="" method="POST">
         <table class="login-form">
-            <tr>
-                <td><input id="isLogin" type="hidden" name="login"></td>
-                <td><input id="isError" type="hidden"></td>
-            </tr>
-            <tr>
-                <td>
-                    <h3>Name:</h3>
-                </td>
-                <td><input class="text-input" type="text" name="name" id="name-input"></td>
-                <td><p id="err-name" class="error-text hide">Username already Existing</p></td>
-                <td><p id="err-name-empty" class="error-text hide">Username cannot be empty</p></td>
-                <td><p id="err-not-existing" class="error-text hide">Username not existing</p></td>
-            </tr>
-            <tr class="register hide">
-                <td>
-                    <h3>Email:</h3>
-                </td>
-                <td><input class="text-input" type="email" name="email" id="email"></td>
-                <td><p id="err-email-empty" class="error-text hide">Email cannot be empty</p></td>
-            </tr>
-            <tr class="register hide">
-                <td>
-                    <h3>Repeat Email:</h3>
-                </td>
-                <td><input class="text-input" type="email" name="" id="repeat-email"></td>
-                <td><p id="err-repeat-email" class="error-text hide">Wrong repeated Email</p></td>
-            </tr>
-            <tr>
-                <td>
-                    <h3>Password:</h3>
-                </td>
-                <td><input class="text-input" type="password" name="password" id="password"></td>
-                <td><p id="err-password-empty" class="error-text hide">Password is empty</p></td>
-                <td><p id="err-password-wrong" class="error-text hide">Password wrong</p></td>
-            </tr>
-            <tr class="register hide">
-                <td>
-                    <h3>Repeat Password:</h3>
-                </td>
-                <td><input class="text-input" type="password" name="repeat-password" id="repeat-password"></td>
-                <td><p id="err-repeat-password" class="error-text hide">Wrong repeated Password</p></td>
-            </tr>
-            <tr class="flex-row">
-                <td><input id="submit-btn" class="btn btn-login btn-l mainColor" type="submit" value="Submit"></td>
-                <td><button id="register-btn" class="btn btn-login main-border" type="button">Register</button></td>
-            </tr>
+            <tbody>
+                <tr>
+                    <td><input id="isLogin" type="hidden" name="login"></td>
+                    <td><input id="isError" type="hidden"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Name:</h3>
+                    </td>
+                    <td><input class="text-input" type="text" name="name" id="name-input"></td>
+                    <td>
+                        <p id="err-name" class="error-text hide">Username already Existing</p>
+                    </td>
+                    <td>
+                        <p id="err-name-empty" class="error-text hide">Username cannot be empty</p>
+                    </td>
+                    <td>
+                        <p id="err-not-existing" class="error-text hide">Username not existing</p>
+                    </td>
+                </tr>
+                <tr class="register hide">
+                    <td>
+                        <h3>Email:</h3>
+                    </td>
+                    <td><input class="text-input" type="email" name="email" id="email"></td>
+                    <td>
+                        <p id="err-email-empty" class="error-text hide">Email cannot be empty</p>
+                    </td>
+                </tr>
+                <tr class="register hide">
+                    <td>
+                        <h3>Repeat Email:</h3>
+                    </td>
+                    <td><input class="text-input" type="email" name="" id="repeat-email"></td>
+                    <td>
+                        <p id="err-repeat-email" class="error-text hide">Wrong repeated Email</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <h3>Password:</h3>
+                    </td>
+                    <td><input class="text-input" type="password" name="password" id="password"></td>
+                    <td>
+                        <p id="err-password-empty" class="error-text hide">Password is empty</p>
+                    </td>
+                    <td>
+                        <p id="err-password-wrong" class="error-text hide">Password wrong</p>
+                    </td>
+                </tr>
+                <tr class="register hide">
+                    <td>
+                        <h3>Repeat Password:</h3>
+                    </td>
+                    <td><input class="text-input" type="password" name="repeat-password" id="repeat-password"></td>
+                    <td>
+                        <p id="err-repeat-password" class="error-text hide">Wrong repeated Password</p>
+                    </td>
+                </tr>
+                <tr class="flex-row">
+                    <td><input id="submit-btn" class="btn btn-login btn-l mainColor" type="submit" value="Submit"></td>
+                    <td><button id="register-btn" class="btn btn-login main-border" type="button">Register</button></td>
+                </tr>
+            </tbody>
         </table>
     </form>
 </section>

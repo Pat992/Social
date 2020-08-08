@@ -52,7 +52,7 @@ class MainController
 
         $stmt = $this->pdo->prepare($this->type[$index]);
         if ($stmt) {
-            $stmt->execute(['id' => $id]);
+            $res = $stmt->execute(['id' => $id]);
         }
     }
 

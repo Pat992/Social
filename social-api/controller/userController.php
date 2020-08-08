@@ -23,6 +23,8 @@ class User extends MainController
             }
             if(password_verify($password, $user['userPassword'])) {
                 $this->createSession($name);
+                var_dump($_SESSION);
+                http_response_code(200);
             }
             else if($user){
                 http_response_code(401);
@@ -58,6 +60,7 @@ class User extends MainController
                 die();
             }
             $this->createSession($name);
+            http_response_code(200);
         } else {
             http_response_code(401);
             echo json_encode("User already existing");

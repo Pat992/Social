@@ -1,10 +1,4 @@
 <?php
-// Headers to get back JSON-Data
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
-header("Access-Control-Allow-Methods: POST");
-header("Access-Control-Max-Age: 3600");
-header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 session_start();
 
@@ -47,23 +41,16 @@ if (isset($_GET['nav'])) {
     }
 }
 
-// Add a new post
-if (isset($_POST['post'])) {
-    $post->newPost($_POST['content']);
-}
-
 if (isset($_POST['comment'])) {
     $comment->newComment();
 }
 
-if(isset($_POST['deletePost'])) {
-    $post->deletePost();
-}
 
 if(isset($_POST['deleteComment'])) {
     $comment->deleteComment();
 }
 
+// if user is logged-in, get all posts, comments and images
 if (isset($_SESSION['userName'])) {
     $postBuilder = new PostBuilder($post->getAll('post'), $comment->getAll('comment'), $comment->getAll('image'));
 } else {
@@ -72,7 +59,6 @@ if (isset($_SESSION['userName'])) {
     //if no data, then return unauthorized
     if(!$data) {
         http_response_code(401);
-        echo json_encode("unauthorized");
     }
     // else try to login
     else {
