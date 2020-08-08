@@ -48,7 +48,7 @@ if (isset($_SESSION['userName'])) {
     $postBuilder = new PostBuilder($post->getAll('post'), $comment->getAll('comment'), $comment->getAll('image'));
 } else {
     // Uncomment to test, add an existing user.
-    $this->createSession('Patrick');
+    createSession('Patrick');
     // get data
     $data = json_decode(file_get_contents('php://input'), true);
     //if no data, then return unauthorized

@@ -1,0 +1,35 @@
+.MainColor {
+    background-color: #3a4750;
+}
+
+.mainColorText {
+    color: #3a4750;
+}
+
+.SecondaryColor {
+    background-color: #d72323;
+}
+
+.SecondaryColor:hover {
+    background-color: #f04545;
+}
+
+.secondaryColorText {
+    color: #d72323;
+}
+
+.secondaryColorSvg {
+    fill: #d72323;
+}
+
+.secondaryColorSvgHover {
+    fill: #f04545;
+}
+
+.highlightColor {
+    background-color: #eeeeee;
+}
+
+.highlightColorText {
+    color: #eeeeee;
+}
