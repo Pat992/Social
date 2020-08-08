@@ -1,0 +1,38 @@
+.Form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.Form Input {
+    width: 500px;
+    margin: 10px 0;
+}
+
+.ButtonGroup Button {
+    margin: 0 10px 10px 0;
+}
+
+/**
+Smaller size devices
+**/
+@media only screen and (max-width:720px) {
+    .Form {
+        width: 80%;
+    }
+
+    .Form Input {
+        width: 450px;
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .Form {
+        width: 90%;
+    }
+    .Form Input {
+        width: 300px;
+    }
+}

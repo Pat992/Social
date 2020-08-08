@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import Input from '../UI/Input/Input';
 import Button from '../UI/Button/Button';
 import Card from '../UI/Card/Card';
+import classes from './Login.module.css';
 
 const Login = (props) => {
     const [userName, setUserName] = useState('');
@@ -38,17 +39,19 @@ const Login = (props) => {
     return (
         <Card
             cardHeader={
-                <h1 id="login-title">Login</h1>
+                <h1 id="login-title">{isLogin ? 'LOGIN' : 'REGISTER'}</h1>
             }
             cardBody={
-                <form onSubmit={onSubmitHandler} >
+                <form onSubmit={onSubmitHandler} className={classes.Form}>
                     <Input type="text" value={userName} setValue={setUserName}>Name:</Input>
-                    <Input type="email" value={email} setValue={setEmail}>Email:</Input>
-                    <Input type="email" value={repeatEmail} setValue={setRepeatEmail}>Repeat Email:</Input>
+                    <Input type="email" value={email} setValue={setEmail} hidden={isLogin}>Email:</Input>
+                    <Input type="email" value={repeatEmail} setValue={setRepeatEmail} hidden={isLogin}>Repeat Email:</Input>
                     <Input type="password" value={password} setValue={setPassword}>Password:</Input>
-                    <Input type="password" value={repeatPassword} setValue={setRepeatPassword}>Repeat Password:</Input>
-                    <Button type="submit">Submit</Button>
-                    <Button type="button" onClick={() => setIsLogin(() => !isLogin)}>{isLogin ? 'Register' : 'Login'}</Button>
+                    <Input type="password" value={repeatPassword} setValue={setRepeatPassword} hidden={isLogin}>Repeat Password:</Input>
+                    <div className={classes.ButtonGroup}>
+                        <Button type="submit" styling="main">SUBMIT</Button>
+                        <Button type="button" styling="secondary" onClick={() => setIsLogin(() => !isLogin)}>{isLogin ? 'REGISTER' : 'LOGIN'}</Button>
+                    </div>
                 </form>
             }
         />

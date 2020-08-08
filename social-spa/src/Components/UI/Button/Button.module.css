@@ -1,0 +1,16 @@
+.Button {
+    border: 1px #3a4750 solid;
+    width: 100px;
+    height: 40px;
+    font-size: 17px;
+    box-shadow: 2px 2px 8px #c9c9c9;
+}
+
+.ButtonSecondary {
+    background-color: transparent;
+}
+
+.ButtonSecondary:hover {
+    background-color: #3a4750;
+    color: #eeeeee;
+}

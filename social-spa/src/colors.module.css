@@ -2,6 +2,10 @@
     background-color: #3a4750;
 }
 
+.MainColor:hover {
+    background-color: #485863;
+}
+
 .mainColorText {
     color: #3a4750;
 }
@@ -14,7 +18,7 @@
     background-color: #f04545;
 }
 
-.secondaryColorText {
+.SecondaryColorText {
     color: #d72323;
 }
 
@@ -26,10 +30,10 @@
     fill: #f04545;
 }
 
-.highlightColor {
+.HighlightColor {
     background-color: #eeeeee;
 }
 
-.highlightColorText {
+.HighlightColorText {
     color: #eeeeee;
 }

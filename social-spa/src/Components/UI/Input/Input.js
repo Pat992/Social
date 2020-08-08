@@ -1,8 +1,17 @@
 import React from 'react'
 
+import classes from './Input.module.css';
+
 const Input = (props) => {
     return (
-        <label>{props.children}<input type={props.type} value={props.value} onChange={(e) => props.setValue(e.target.value)} /></label>
+        <label className={props.hidden ? classes.Hidden : null}>
+            {props.children}
+            <input
+                className={classes.Input}
+                type={props.type}
+                value={props.value}
+                onChange={(e) => props.setValue(e.target.value)} />
+        </label>
     )
 }
 
