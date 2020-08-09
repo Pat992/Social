@@ -13,18 +13,26 @@ const Post = (props) => {
                 <React.Fragment>
                     <p>Image</p>
                     <div className={classes.Row}>
-                        <h2>I'm a post</h2>
-                        <p>Date written</p>
+                        <h2>{props.userName}</h2>
+                        <p>{props.date}</p>
                     </div>
                 </React.Fragment>
             }
             cardBody={
                 <div className={classes.CommentSection}>
-                    <p>I'm the post content</p>
+                    <p>{props.content}</p>
                     <hr />
                     <Input placeholder="New Comment" />
                     <Button styling="main">COMMENT</Button>
-                    <Comment />
+                    {props.comments.map(comment => (
+                        <Comment
+                            key={comment.commentId}
+                            userName={comment.user}
+                            comment={comment.comment}
+                        />
+                    ))}
+                    <Comment
+                    />
                 </div>
             }
         />

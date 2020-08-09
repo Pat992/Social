@@ -5,13 +5,13 @@ import Posts from '../Posts/Posts';
 import CreatePost from '../Posts/CreatePost/CreatePost';
 import classes from './Main.module.css'
 
-const Main = () => {
+const Main = (props) => {
     return (
         <React.Fragment>
             <Navbar />
             <div className={classes.MainBody}>
                 <CreatePost />
-                <Posts />
+                <Posts posts={props.posts} />
             </div>
         </React.Fragment>
     )

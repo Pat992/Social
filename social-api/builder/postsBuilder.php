@@ -12,11 +12,11 @@ class PostBuilder{
     public function __construct($posts, $comments, $images)
     {
         $commentsBuilder = new CommentBuilder();
-        $commentsToPost = [];
-        $imagesToPost = [];
         $imageBuilder = new ImageBuilder();
 
         foreach($posts as $post) {
+            $commentsToPost = [];
+            $imagesToPost = [];
             // Get comments
             $commentsToPost = $commentsBuilder->getComments($post['postID'], $comments);
             // Get images
