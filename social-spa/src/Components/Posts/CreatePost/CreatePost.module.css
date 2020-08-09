@@ -3,6 +3,7 @@
     align-self: flex-start;
     width: 100%;
     padding: 20px;
+    margin: 0;
 }
 
 .Column textarea {
@@ -22,4 +23,22 @@
     background-image: url(../../../graphic/camera.svg);
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.HiddenButton {
+    opacity: 0;
+    height: 40px;
+    width: 40px;
+}
+
+/**
+Smaller size devices
+**/
+@media only screen and (max-width:1200px) {
+    .Column {
+        width: 90%;
+    }
+    .Column textarea {
+        width: 60%;
+    }
 }

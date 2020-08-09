@@ -3,4 +3,5 @@
   flex-direction: column;
   align-items: center;
   color: #303841;
+  max-width: 100vw;
 }

@@ -5,6 +5,7 @@ require_once __DIR__ . "/router.php";
 
 use Core\DatabaseConnect;
 use Core\Post;
+use Core\Images;
 
 // Uncomment to test, add an existing user.
 $_SESSION['userName'] = 'Patrick';
@@ -24,17 +25,17 @@ if (!isset($dba)) {
 if (!isset($post)) {
     $post = new Post($pdo);
 }
+if (!isset($images)) {
+    $images = new Images($pdo);
+}
 
 // get data
 $data = json_decode(file_get_contents('php://input'), true);
 // did user send data? 
-if($data) {
+if(isset($_POST['post'])) {
     // Create a new post
-    if(array_key_exists('post', $data)) {
-        $post->newPost($data['post']);
-    } 
-    // delete a post
-    else if(array_key_exists('delete', $data)) {
-        $post->deletePost($data['delete']);
-    }
+    $post->newPost($_POST['post']);
+}
+if($data && array_key_exists('delete', $data)) {
+    $post->deletePost($data['delete']);
 }

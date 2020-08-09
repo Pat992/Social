@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import colors from '../../../../colors.module.css';
+import colors from '../../../colors.module.css';
 import classes from './Logos.module.css';
 
 const Messages = () => {

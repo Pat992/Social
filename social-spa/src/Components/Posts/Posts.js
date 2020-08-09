@@ -17,6 +17,7 @@ const Posts = (props) => {
                     images={post.imagesToPost}
                     comments={post.commentsToPost}
                     updatePage={props.updatePage}
+                    deletable={post.deletable}
                 />
             ))}
         </div>

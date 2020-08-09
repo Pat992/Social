@@ -2,9 +2,9 @@ import React from 'react'
 
 import classes from './Navbar.module.css';
 import colors from '../../../colors.module.css';
-import Usergroup from './Icons/Usergroup';
-import Messages from './Icons/Messages';
-import Logout from './Icons/Logout';
+import Usergroup from '../Icons/Usergroup';
+import Messages from '../Icons/Messages';
+import Logout from '../Icons/Logout';
 
 const Navbar = () => {
     return (

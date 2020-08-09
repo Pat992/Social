@@ -7,6 +7,7 @@ import Input from '../../UI/Input/Input';
 import Comment from '../../Comment/Comment';
 import classes from './Post.module.css';
 import baseURL from '../../../_helper/baseUrl';
+import Delete from '../../UI/Icons/Delete';
 
 const Post = (props) => {
     const [comment, setComment] = useState('');
@@ -32,6 +33,7 @@ const Post = (props) => {
                         <h2>{props.userName}</h2>
                         <p>{props.date}</p>
                     </div>
+                    {props.deletable ? <Delete /> : null}
                 </React.Fragment>
             }
             cardBody={
@@ -45,6 +47,7 @@ const Post = (props) => {
                             key={comment.commentId}
                             userName={comment.user.toUpperCase()}
                             comment={comment.comment}
+                            deletable={comment.deletable}
                         />
                     ))}
                 </div>

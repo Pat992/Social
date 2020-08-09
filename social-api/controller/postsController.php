@@ -8,7 +8,6 @@ class Post extends Images
 {
     public function newPost($content)
     {
-
         $post = htmlspecialchars($content, ENT_QUOTES, 'UTF-8');
         $stmt = $this->pdo->prepare("INSERT INTO posts (userName, postContent, postDate, postOwner) VALUES (:user, :content, now(), :owner)");
         $stmt->execute([
@@ -18,7 +17,7 @@ class Post extends Images
         ]);
         
         $result = $this->pdo->lastInsertId();
-
+        
         $this->saveImage($result);
 
         header("Location: {$_SERVER['PHP_SELF']}");
