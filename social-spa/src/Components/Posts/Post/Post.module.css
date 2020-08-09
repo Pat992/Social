@@ -23,6 +23,10 @@
     margin: 10px 0;
 }
 
+.Content {
+    min-height: 100px;
+}
+
 hr {
     width: 100%;
 }

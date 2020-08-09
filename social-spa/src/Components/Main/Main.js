@@ -10,8 +10,8 @@ const Main = (props) => {
         <React.Fragment>
             <Navbar />
             <div className={classes.MainBody}>
-                <CreatePost />
-                <Posts posts={props.posts} />
+                <CreatePost updatePage={props.updatePage} />
+                <Posts posts={props.posts} updatePage={props.updatePage} />
             </div>
         </React.Fragment>
     )

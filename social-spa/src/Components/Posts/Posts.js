@@ -10,11 +10,13 @@ const Posts = (props) => {
             {props.posts.map(post => (
                 <Post
                     key={post.postId}
+                    postId={post.postId}
                     userName={post.userName}
                     date={post.postDate}
                     content={post.postContent}
                     images={post.imagesToPost}
                     comments={post.commentsToPost}
+                    updatePage={props.updatePage}
                 />
             ))}
         </div>

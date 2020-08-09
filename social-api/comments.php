@@ -7,6 +7,11 @@ require_once __DIR__ . "/router.php";
 use Core\DatabaseConnect;
 use Core\Comment;
 
+// Uncomment to test, add an existing user.
+$_SESSION['userName'] = 'Patrick';
+$_SESSION['userID'] = 47;
+session_regenerate_id(true);
+
 // Is user not logged-in?
 if (!isset($_SESSION['userName'])) {
     http_response_code(401);

@@ -17,7 +17,7 @@ function App() {
   const onConnectHandler = () => {
     axios.get(baseURL, { withCredentials: true }).then(res => {
       // then get the Main-page
-      setChild(<Main posts={res.data} />)
+      setChild(<Main posts={res.data} updatePage={onConnectHandler} />)
 
     }, err => {
       // if status is 401, not logged-in, show login-form
@@ -27,7 +27,6 @@ function App() {
 
   // Login function
   const onLoginRegisterHandler = data => {
-    console.log(data)
     fetch(baseURL, {
       method: 'POST',
       body: JSON.stringify(data),

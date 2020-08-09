@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import classes from './Comment.module.css';
 import colors from '../../colors.module.css';
