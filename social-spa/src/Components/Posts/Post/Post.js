@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import ImageGallery from 'react-image-gallery';
 
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
@@ -11,6 +12,18 @@ import Delete from '../../UI/Icons/Delete';
 
 const Post = (props) => {
     const [comment, setComment] = useState('');
+    const images = [];
+
+    props.images.forEach(img => {
+        images.push(
+            {
+                original: `${baseURL}images/${img.imageName}`,
+                thumbnail: `${baseURL}images/${img.imageName}`
+            }
+        );
+    });
+
+    console.log(images);
 
     const newComment = () => {
         if (comment.trim() !== '') {
@@ -39,6 +52,7 @@ const Post = (props) => {
             cardBody={
                 <div className={classes.CommentSection}>
                     <p className={classes.Content}>{props.content}</p>
+                    {images.length > 0 ? <ImageGallery items={images} /> : null}
                     <hr />
                     <Input placeholder="New Comment" value={comment} setValue={setComment} />
                     <Button styling="main" onClick={newComment}>COMMENT</Button>

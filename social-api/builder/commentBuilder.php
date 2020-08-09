@@ -11,7 +11,6 @@ class CommentBuilder
         if ($comments != NULL) {
             foreach ($comments as $comment) {
                 if($comment['post_IDFK'] != $post) {
-                    //var_dump($comment['commentID']);
                     continue;
                 }
                 $commentArr = [

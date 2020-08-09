@@ -4,9 +4,8 @@ namespace Builder;
 
 class ImageBuilder 
 {
-    private $imageJSON = [];
-
     public function getImages($post, $images) {
+        $imageJSON = [];
 
         foreach($images as $image) {
             if($image['post_IDFK'] != $post) {
@@ -19,9 +18,9 @@ class ImageBuilder
                 "post" => $image['post_IDFK']
             ];
 
-            array_push($this->imageJSON, $imageArr);
+            array_push($imageJSON, $imageArr);
         }
 
-        return ($this->imageJSON);
+        return ($imageJSON);
     }
 }
