@@ -23,7 +23,15 @@ const Post = (props) => {
         );
     });
 
-    console.log(images);
+    const deletePost = () => {
+        axios.post(`${baseURL}posts.php`, JSON.stringify({
+            delete: props.postId
+        })).then(res => {
+            props.updatePage();
+        }).catch(err => {
+
+        })
+    }
 
     const newComment = () => {
         if (comment.trim() !== '') {
@@ -46,7 +54,7 @@ const Post = (props) => {
                         <h2>{props.userName}</h2>
                         <p>{props.date}</p>
                     </div>
-                    {props.deletable ? <Delete /> : null}
+                    {props.deletable ? <Delete delete={deletePost} /> : null}
                 </React.Fragment>
             }
             cardBody={
@@ -59,9 +67,11 @@ const Post = (props) => {
                     {props.comments.map(comment => (
                         <Comment
                             key={comment.commentId}
+                            commentId={comment.commentId}
                             userName={comment.user.toUpperCase()}
                             comment={comment.comment}
                             deletable={comment.deletable}
+                            updatePage={props.updatePage}
                         />
                     ))}
                 </div>

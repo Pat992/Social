@@ -31,6 +31,7 @@ if (!isset($images)) {
 
 // get data
 $data = json_decode(file_get_contents('php://input'), true);
+
 // did user send data? 
 if(isset($_POST['post'])) {
     // Create a new post

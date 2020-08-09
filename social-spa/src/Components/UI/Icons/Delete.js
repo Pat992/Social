@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import classes from './Logos.module.css';
 
-const Delete = () => {
+const Delete = (props) => {
     const [hover, setHover] = useState('#d72323')
 
     return (
-        <div onMouseEnter={() => setHover('#f04545')} onMouseLeave={() => setHover('#d72323')} className={[classes.Logo, classes.Delete].join(' ')}>
+        <div onMouseEnter={() => setHover('#f04545')} onMouseLeave={() => setHover('#d72323')} className={[classes.Logo, classes.Delete].join(' ')} onClick={props.delete}>
             <svg width="100%" height="100%" viewBox="0 0 411 411" version="1.1" xmlns="http://www.w3.org/2000/svg" style={{ fillRule: 'evenodd', clipRrule: 'evenodd', strokeLinecap: 'round', strokeLinejoin: 'round', strokeMiterlimit: 1 }}>
                 <g transform="matrix(1,0,0,1,1840,1310)">
                     <g id="delete-hover" transform="matrix(1,0,0,1,242,500)">

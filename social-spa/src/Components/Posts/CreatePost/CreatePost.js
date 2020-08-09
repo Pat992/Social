@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import axios from 'axios';
 
 import classes from './CreatePost.module.css';
@@ -26,7 +26,7 @@ const CreatePost = (props) => {
                 data: formData,
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then(res => {
-                //props.updatePage();
+                props.updatePage();
                 setPost('');
             }, err => {
                 console.log(err)

@@ -8,29 +8,4 @@
     max-height: 15px;
     max-width: 15px;
     align-self: center;
-    padding-left: 81%;
-}
-
-/**
-Smaller size devices
-**/
-@media only screen and (max-width:1200px) {
-    .Delete {
-        padding-left: 65%;
-    }
-}
-@media only screen and (max-width:1000px) {
-    .Delete {
-        padding-left: 50%;
-    }
-}
-/* @media only screen and (max-width:720px) {
-    .Delete {
-        padding-left: 65%;
-    }
-} */
-@media only screen and (max-width:450px) {
-    .Delete {
-        padding-left: 50%;
-    }
 }
