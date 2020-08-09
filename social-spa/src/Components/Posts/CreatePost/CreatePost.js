@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import alertify from 'alertifyjs';
 
 import classes from './CreatePost.module.css';
 import Card from '../../UI/Card/Card';
@@ -26,10 +27,12 @@ const CreatePost = (props) => {
                 data: formData,
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then(res => {
+                alertify.success('Post was added.');
                 props.updatePage();
                 setPost('');
+                setPictures([]);
             }, err => {
-                console.log(err)
+                alertify.error('Could not add Post,\ntry again later');
             })
         }
     }

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios';
 import ImageGallery from 'react-image-gallery';
+import alertify from 'alertifyjs';
 
 import Card from '../../UI/Card/Card';
 import Button from '../../UI/Button/Button';
@@ -27,9 +28,10 @@ const Post = (props) => {
         axios.post(`${baseURL}posts.php`, JSON.stringify({
             delete: props.postId
         })).then(res => {
+            alertify.success('Post was deleted');
             props.updatePage();
         }).catch(err => {
-
+            alertify.error('Could not delete Post,\ntry again later');
         })
     }
 
@@ -39,9 +41,10 @@ const Post = (props) => {
                 comment: comment,
                 postToComment: props.postId
             })).then(res => {
+                alertify.success('Comment was added');
                 props.updatePage();
             }).catch(err => {
-
+                alertify.error('Could not add Comment,\ntry again later');
             })
         }
     }

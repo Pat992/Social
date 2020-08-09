@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import axios from 'axios';
+import alertify from 'alertifyjs';
 
 import baseURL from '../../_helper/baseUrl';
 import classes from './Comment.module.css';
@@ -12,9 +13,10 @@ const Comment = (props) => {
         axios.post(`${baseURL}comments.php`, JSON.stringify({
             delete: props.commentId
         })).then(res => {
+            alertify.success('Comment was deleted');
             props.updatePage();
         }).catch(err => {
-
+            alertify.error('Could not delete Comment,\ntry again later');
         })
     }
 
