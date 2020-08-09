@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 
 import colors from '../../../colors.module.css';
 import classes from './Logos.module.css';
@@ -6,7 +7,7 @@ import classes from './Logos.module.css';
 const Usergroup = () => {
     const [hover, setHover] = useState(false)
     return (
-        <div onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={classes.Logo}>
+        <NavLink to='/user' exact onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} className={classes.Logo}>
             <svg width="100%" height="100%" viewBox="0 0 229 227" version="1.1" xmlns="http://www.w3.org/2000/svg" style={{ fillRule: 'evenodd', clipRule: 'evenodd', strokeLineJoin: 'round', strokeMiterlimit: 2 }}>
                 <g transform="matrix(1,0,0,1,0,954)">
                     <g id="Usergroup" transform="matrix(4.24117,0,0,4.24117,-3153.31,-481.471)">
@@ -19,7 +20,7 @@ const Usergroup = () => {
                     </g>
                 </g>
             </svg>
-        </div>
+        </NavLink>
     )
 }
 

@@ -1,6 +1,7 @@
 import React from 'react'
 import alertify from 'alertifyjs';
 import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 
 import classes from './Navbar.module.css';
 import colors from '../../../colors.module.css';
@@ -28,7 +29,7 @@ const Navbar = (props) => {
         <React.Fragment>
             <nav className={classes.Navbar}>
                 <div className={[classes.Navpart, colors.MainColor].join(' ')}></div>
-                <button className={[classes.NavBtn, colors.SecondaryColor].join(' ')}></button>
+                <NavLink to='/' exact className={[classes.NavBtn, colors.SecondaryColor].join(' ')}></NavLink>
                 <ul className={[classes.Navpart, classes.Navitems, colors.MainColor].join(' ')}>
                     <li><Usergroup /></li>
                     <li><Messages openMessages={props.openMessages} /></li>
