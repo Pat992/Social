@@ -27,10 +27,10 @@ const CreatePost = (props) => {
                 data: formData,
                 headers: { 'Content-Type': 'multipart/form-data' }
             }).then(res => {
-                alertify.success('Post was added.');
                 props.updatePage();
                 setPost('');
                 setPictures([]);
+                alertify.success('Post was added.');
             }, err => {
                 alertify.error('Could not add Post,\ntry again later');
             })

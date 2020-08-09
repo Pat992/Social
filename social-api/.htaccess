@@ -1,0 +1,2 @@
+allow from all
+#Header always set Content-Type "application/json"

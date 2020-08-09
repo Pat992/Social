@@ -13,8 +13,8 @@ const Comment = (props) => {
         axios.post(`${baseURL}comments.php`, JSON.stringify({
             delete: props.commentId
         })).then(res => {
-            alertify.success('Comment was deleted');
             props.updatePage();
+            alertify.success('Comment was deleted');
         }).catch(err => {
             alertify.error('Could not delete Comment,\ntry again later');
         })

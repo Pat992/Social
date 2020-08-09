@@ -7,7 +7,7 @@ const Input = (props) => {
         <React.Fragment>
             <label className={props.hidden ? classes.Hidden : null}>{props.children}</label>
             <input
-                className={classes.Input}
+                className={[classes.Input, props.hidden ? classes.Hidden : null].join(' ')}
                 placeholder={props.placeholder}
                 type={props.type}
                 value={props.value}

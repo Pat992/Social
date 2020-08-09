@@ -41,8 +41,8 @@ const Post = (props) => {
                 comment: comment,
                 postToComment: props.postId
             })).then(res => {
-                alertify.success('Comment was added');
                 props.updatePage();
+                alertify.success('Comment was added');
             }).catch(err => {
                 alertify.error('Could not add Comment,\ntry again later');
             })
