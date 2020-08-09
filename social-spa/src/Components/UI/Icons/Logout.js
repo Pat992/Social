@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import classes from './Logos.module.css';
 
-const Logout = () => {
+const Logout = (props) => {
     const [hover, setHover] = useState('#d72323')
 
     return (
-        <div onMouseEnter={() => setHover('#f04545')} onMouseLeave={() => setHover('#d72323')} className={classes.Logo}>
+        <div onClick={props.logout} onMouseEnter={() => setHover('#f04545')} onMouseLeave={() => setHover('#d72323')} className={classes.Logo}>
             <svg width="100%" height="100%" viewBox="0 0 484 446" version="1.1" xmlns="http://www.w3.org/2000/svg" style={{ fillRule: 'evenodd', clipRule: 'evenodd', strokeLinecap: 'round', strokeLineJoin: 'round', strokeMiterlimit: 1, cursor: 'pointer' }}>
                 <g transform="matrix(1,0,0,1,1077,1797)">
                     <g id="logout">

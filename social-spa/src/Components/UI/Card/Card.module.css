@@ -7,6 +7,7 @@
     box-shadow: 2px 5px 8px #c9c9c9;
     height: auto;
     margin: 20px 0;
+    background-color: white;
 }
 
 .Cardheader {
@@ -24,6 +25,7 @@
     align-items: center;
     height: 100%;
     padding: 5px;
+    background-color: white;
 }
 
 /**
